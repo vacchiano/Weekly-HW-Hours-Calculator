@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+	<meta charset="utf-8">
+	<title>Average HW Time</title>
+
+
+	<style>
+label {
+  display: inline-block;
+  width: 80px;
+}
+div {
+	width: 30%;
+	margin-left: 35%;
+	margin-right: 35%;
+	margin-top: 5%;
+
+}
+h1 {
+	width: 40%;
+	margin-right: 35%;
+	margin-left: 31%;
+	margin-top: 5%;
+  color: blue;
+}
+
+
+@media (max-width: 568px) {
+	label {
+		display: inline-block;
+		width: 80px;
+		margin-top: 5%
+	}
+	h1 {
+		margin-left: 35%;
+		margin-right: 35%;
+		width: 30%
+		margin-top: 5%;
+	}
+}
+
+	</style>
+
+<script>
+function CalculateHW(Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, resultElementName) {
+   Monday = Number(Monday)
+   Tuesday = Number(Tuesday)
+   Wednesday = Number(Wednesday)
+   Thursday = Number(Thursday)
+   Friday = Number(Friday)
+   Saturday = Number(Saturday)
+   Sunday = Number(Sunday)
+ 
+
+   var totalHours = (Monday + Tuesday + Wednesday + Thursday + Friday + Saturday + Sunday)
+
+   var resultElement = document.getElementById(resultElementName)
+   resultElement.innerHTML = (totalHours / 7)
+}
+</script>
+
+
+</head>
+
+<body>
+ 
+ 	<h1>Average Weekly HW hours</h1>
+
+<div>
+	
+
+	<form action="#" id="hwCalculator">
+
+    <label for="Monday">Monday:</label>
+    <input name="Monday"> hours<br>
+    <label for="Tuesday">Tuesday:</label>
+    <input name="Tuesday"> hours<br>
+    <label for="Wednesday">Wednesday:</label>
+    <input name="Wednesday"> hours<br>
+    <label for="Thursday">Thursday:</label>
+    <input name="Thursday"> hours<br>
+    <label for="Friday">Friday:</label>
+    <input name="Friday"> hours<br>
+    <label for="Saturday">Saturday:</label>
+    <input name="Saturday"> hours<br>
+    <label for="Sunday">Sunday:</label>
+    <input name="Sunday"> hours<br>
+
+
+
+    <input type="button" name="calc" value="Calculate" onclick="CalculateHW(this.form.Monday.value, this.form.Tuesday.value, this.form.Wednesday.value, this.form.Thursday.value, this.form.Friday.value, this.form.Saturday.value, this.form.Sunday.value, 'result')" /></p>
+  </form>
+  <p>Your Average Weekly Hours Spent on HW: <output id="result"></output></p>
+
+
+</div>
+
+</body>
+</html>
